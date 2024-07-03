@@ -149,8 +149,11 @@ int main(int argc, char **argv)
     Eigen::Vector3d rpy = caliber.calib();
     Eigen::Matrix3d rot = Eigen::Matrix3d(Eigen::AngleAxisd(rpy[2], Eigen::Vector3d::UnitZ()) * Eigen::AngleAxisd(rpy[1], Eigen::Vector3d::UnitY()) * Eigen::AngleAxisd(rpy[0], Eigen::Vector3d::UnitX()));
     cout << "result euler angle(RPY) : " << rpy[0] << " " << rpy[1] << " " << rpy[2] << endl;
-    cout << "result extrinsic rotation matrix : " << endl;
+    cout << "result extrinsic rotation matrix" << endl;
+    cout << "IMU to LiDAR" << endl;
     cout << rot << endl;
+    cout << "LiDAR to IMU" << endl;
+    cout << rot.inverse() << endl;
 
     return 0;
 }
