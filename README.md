@@ -30,16 +30,7 @@ catkin_make -DCATKIN_WHITELIST_PACKAGES="ndt_omp;lidar_imu_calib"
    rosbag record /imu /lidar_points
    ```
 
-2. config launch file
-
-   ```
-   lidar_topic: lidar data topic name
-   imu_topic: imu data topic name
-   bag_file: *.bag file record imu and lidar data topic
-   ```
-
-
-3. start
+2. start
 
    ```bash
    roslaunch lidar_imu_calib calib_exR_lidar2imu.launch \
