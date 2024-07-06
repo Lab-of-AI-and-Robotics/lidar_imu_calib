@@ -35,7 +35,7 @@ catkin_make -DCATKIN_WHITELIST_PACKAGES="ndt_omp;lidar_imu_calib"
 3. start
 
    ```
-   roslaunch lidar_imu_calib calib_exR_lidar2imu.launch
+   roslaunch lidar_imu_calib calib_exR_lidar2imu.launch bag_file:=<path of the bag file> lidar_topic:=<lidar topic name> imu_topic:=<imu topic name>
    ```
 ### reference
 [https://blog.csdn.net/weixin_37835423/article/details/110672571](https://blog.csdn.net/weixin_37835423/article/details/110672571)
