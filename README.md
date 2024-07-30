@@ -14,11 +14,20 @@ when develop slam based on 3D lidar, we often use imu to provide priori for matc
 ### prerequisite 
 
 - [ROS](http://wiki.ros.org/kinetic/Installation/Ubuntu)
+
+### To tackle build error
+```bash
+sudo mv /usr/include/flann/ext/lz4.h /usr/include/flann/ext/lz4.h.bak
+sudo mv /usr/include/flann/ext/lz4hc.h /usr/include/flann/ext/lz4.h.bak
+ln -s /usr/include/lz4.h /usr/include/flann/ext/lz4.h
+ln -s /usr/include/lz4hc.h /usr/include/flann/ext/lz4hc.h
+```
+
 ### compile
 ```
 mkdir -p catkin_ws/src   
 cd catkin_ws/src
-git clone https://github.com/chennuo0125-HIT/lidar_imu_calib.git
+git clone https://github.com/Lab-of-AI-and-Robotics/lidar_imu_calib.git
 cd ..
 catkin_make -DCATKIN_WHITELIST_PACKAGES="ndt_omp;lidar_imu_calib"
 ```
